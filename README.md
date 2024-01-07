@@ -20,7 +20,9 @@ This should generate your Excel files. You can run this whenever you want and it
 Once you've built and run it once using the above instructions, you'll have a built .exe file you can set to run on a scheduler. Here's how I did mine:
 
 - Open Windows Task Scheduler
-- Create a Basic Task ![image](https://github.com/rarDevelopment/fantasy-critic-score-tracker/assets/4060573/235b7325-48f0-4aca-8806-8f01158fbe33)
+- Create a Basic Task
+
+![image](https://github.com/rarDevelopment/fantasy-critic-score-tracker/assets/4060573/235b7325-48f0-4aca-8806-8f01158fbe33)
 - Name your Task
 - In the Trigger section, select how often you want the script to run. Remember that more runs means more data points, so think about how you want your data to be tracked. For Fantasy Critic, daily is probably far too often, weekly could be good, and monthly is probably fine as well. It's up to you!
 - In the Action section, choose "Start a program". The next screen will have you browsse for a program. Browse to the fantasy-critic-score-tracker\FantasyCriticScoreTracker\bin\Debug\net7.0\ and choose **FantasyCriticScoreTracker.exe**.
