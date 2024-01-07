@@ -7,31 +7,34 @@ namespace FantasyCriticScoreTracker;
 
 internal class Program
 {
-    private const string LeagueIdKeyword = "{{LEAGUE_ID}}";
-    private const string YearKeyword = "{{YEAR}}";
-    
     //Step 1: Update your folder path here
     private const string CsvFileLocation = @"LETTER:\YOUR\FOLDER\PATH\HERE";
+    // Step 2: Put all of your League IDs here, each must be in "quotes" and separated by a comma. You're allowed to only have 1 league also.
+    private static readonly List<string> LeagueIds = new()
+    {
+        "A-LEAGUE-ID-HERE",
+        "ANOTHER-LEAGUE-ID-HERE"
+    };
+
+    // Step 3: Make sure this year is the correct year for your league(s).
+    private const string Year = "2024";
+
+    /*
+     * NOTE: Don't change anything below unless you know what you're doing!
+     */
+
+    private const string LeagueIdKeyword = "{{LEAGUE_ID}}";
+    private const string YearKeyword = "{{YEAR}}";
 
     private const string LeagueUrlTemplate = "https://www.fantasycritic.games/api/League/GetLeagueYear?leagueID=" + LeagueIdKeyword + "&year=" + YearKeyword;
 
     static async Task Main(string[] args)
     {
-        // Step 2: Put all of your League IDs here, each must be in "quotes" and separated by a comma. You're allowed to only have 1 league also.
-        var leagueIds = new List<string>
-        {
-            "A-LEAGUE-ID-HERE",
-            "ANOTHER-LEAGUE-ID-HERE",
-        };
-
-        // Step 3: Make sure this year is the correct year for your league(s).
-        const string year = "2024";
-
-        foreach (var leagueId in leagueIds)
+        foreach (var leagueId in LeagueIds)
         {
             try
             {
-                var leagueYearData = await GetLeagueYearData(leagueId, year);
+                var leagueYearData = await GetLeagueYearData(leagueId, Year);
                 var publishers = leagueYearData.Publishers.OrderBy(p => p.DraftPosition).ToList();
 
                 var scoreFileName = $"{leagueYearData.Year} - {leagueYearData.League.LeagueName} - Scores.csv";
