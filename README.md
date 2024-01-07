@@ -6,6 +6,7 @@ A script for generating CSV files with Fantasy Critic scores.
 ## Running The Script
 
 - If you don't already use Visual Studio, you can download and install Visual Studio Community for free [here](https://visualstudio.microsoft.com/vs/community/).
+- Download or Clone this repository in its entirety
 - Open the .sln file in Visual Studio
 - Navigate to the Program.cs file
     - Set the location where you want the .csv files to be generated [here](/FantasyCriticScoreTracker/Program.cs#L11)
