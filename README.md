@@ -26,7 +26,7 @@ Once you've built and run it once using the above instructions, you'll have a bu
 ![image](https://github.com/rarDevelopment/fantasy-critic-score-tracker/assets/4060573/235b7325-48f0-4aca-8806-8f01158fbe33)
 - Name your Task
 - In the Trigger section, select how often you want the script to run. Remember that more runs means more data points, so think about how you want your data to be tracked. For Fantasy Critic, daily is probably far too often, weekly could be good, and monthly is probably fine as well. It's up to you!
-- In the Action section, choose "Start a program". The next screen will have you browsse for a program. Browse to the fantasy-critic-score-tracker\FantasyCriticScoreTracker\bin\Debug\net7.0\ and choose **FantasyCriticScoreTracker.exe**.
+- In the Action section, choose "Start a program". The next screen will have you browsse for a program. Browse to the fantasy-critic-score-tracker\FantasyCriticScoreTracker\bin\Debug\net8.0\ and choose **FantasyCriticScoreTracker.exe**.
 - Click Finish
 
 This should set you up with a scheduled task that runs the script. Feel free to customize your task further, like adding a message step to show a message when this runs (this just requires adding an additional Start a Program step under actions, where the program is `msg` and the arguments you pass in are `* "Fantasy Critic Score Updater was run."` for example).
